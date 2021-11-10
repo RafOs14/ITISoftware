@@ -1,0 +1,63 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+body{
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: white;
+}
+
+.contenedor{
+	z-index: 1;
+	position: absolute;
+	width: 300px;
+	text-align: center;
+}
+
+.form img{
+    height: 200px;
+}
+
+.form .ingreso{
+    width: 250px;
+    height: 30px;
+	margin-bottom: 10px;
+	color: #0003a0;
+    background-color: #FFFFFF;
+	font-size: 15px;
+	text-align: left;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+}
+
+::placeholder{
+    text-align: center;
+    color: #FFFFFF;
+    opacity: 1;
+}
+.ingreso:hover, .ingreso:focus, .ingreso:active{
+	box-shadow: 0 0 200px #0b07c7;
+}
+
+.form .login .loguearse{
+    outline: none;
+    border: none;
+    width: 250px;
+    height: 50px;
+    background: #ffffff;
+    color: #FFFFFF;
+    font-weight: bolder;
+    font-size: 30px;
+    border-radius: 5px;
+    letter-spacing:2px;
+    cursor: pointer;
+    align-content:center;
+}
