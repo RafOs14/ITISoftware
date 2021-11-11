@@ -23,6 +23,7 @@ if(empty($rolsesion)){
             $errores = "";
             $querystock = "";
             $stock = "";
+	    $estadonom = "";
             $query = "SELECT * FROM tipo_equipamiento";
             $tipoeq = mysqli_query($conn, $query);
 
@@ -32,9 +33,14 @@ if(empty($rolsesion)){
             if(isset($_POST['buscar'])){
                 $tipo = $_POST['tipo'];
                 $estado = $_POST['estado'];
-                $query = mysqli_query($conn, "SELECT * FROM estado WHERE id = '$estado'");
-                $resquery = mysqli_fetch_array($query);
-                $estadonom = $resquery['nombre']; 
+                if(!empty($tipo)){
+                    $query = mysqli_query($conn, "SELECT * FROM estado WHERE id = '$estado'");
+                    $resquery = mysqli_fetch_array($query);
+                    $estadonom = $resquery['nombre']; 
+                    $query = mysqli_query($conn, "SELECT * FROM estado WHERE id = '$estado'");
+                    $resquery = mysqli_fetch_array($query);
+                    $estadonom = $resquery['nombre']; 
+                }
                 if(empty($tipo) || empty($estado)){
                     $errores = $errores . " <li>Debe seleccionar valores en ambas listas antes de buscar</li>\n";
                 }
